@@ -1,0 +1,40 @@
+<main>
+  <div>
+    <h1>1074 ОМВ Слатинска</h1>
+    <h3>Изпълнение ММ95 и ММ100 за месец Юни</h3>
+  </div>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>ден</th>
+          <th>ММ95</th>
+          <th>ММ100</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>цели за месеца »</td>
+          <td>{{ mm95 }} л.</td>
+          <td>{{ mm100 }} л.</td>
+        </tr>
+        <tr></tr>
+        <tr *ngFor="let result of data">
+          <td>{{ result.day }}</td>
+          <td>{{ result.m95 }} л.</td>
+          <td>{{ result.m100 }} л.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <p>
+      MM95 За {{ data.length }} дни {{ condition95 }}:
+      {{ sum1 - (mm95 * data.length) / 30 | number: '1.0-0' }} л.
+    </p>
+    <p>
+      MM100 За {{ data.length }} дни {{ condition100 }} :
+      {{ sum2 - (mm100 * data.length) / 30 | number: '1.0-0' }} л.
+    </p>
+  </div>
+</main>
